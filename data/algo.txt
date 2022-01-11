@@ -1,0 +1,21 @@
+song artist link year month
+create artist list
+if header=Youtube Music:
+    add 
+elif official and music and video in title:
+    add 
+elif music and video in title:
+    add 
+elif official and video title:
+    add 
+elif - Topic in name:
+    add 
+elif VEVO in name:
+    add 
+elif Music in name:
+    add 
+elif name in artist link:
+    add
+
+change playlist view like youtube list
+SEO
