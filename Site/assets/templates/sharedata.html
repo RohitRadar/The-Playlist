@@ -1,0 +1,33 @@
+{% extends 'sharedbase.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+{% for message in messages %}
+    <div class="alert">
+        <a class="close">×</a>
+        {{ message }}
+    </div>
+{% endfor %}
+{% if prof != 99 %}
+{% if user.is_authenticated %}
+{% else %}
+<div class="col-lg-12" style="text-align:center;font-size:20px">
+    Sign in to create your own playlist like {{userprofile}}
+</div>
+{% endif %}
+{% for year,yearcontent in list1 %}
+<div class="grids col-lg-12 col-md-12 col-sd-12">
+    <h1 class="year"> {{userprofile}} in {{year}}</h1>
+    {% for month,link in yearcontent %}
+        <div class="months col-lg-4 col-md-4 col-sd-6">
+            <h2>{{month}}</h2>
+            <a href="{% url 'shareplaylist' year month userprofile %}"><img class="imglink" src="http://img.youtube.com/vi/{{link}}/hqdefault.jpg"></a>
+        </div>    
+    {% endfor %}
+</div>
+{% endfor %}
+{% else %}
+<div style="position:fixed;top:150px;font-size:20px;margin-left:30%">Uh oH, {{userprofile}} has not Created their Playlist yet.</div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,102 @@
+.usernoob{
+    text-align: center;
+    font-size: 25px;
+}
+.bod{
+    width:100%;
+    height:fit-content;
+}
+.single{
+    margin-bottom:20px;
+    font-size: 16px;
+}
+.warn{
+    text-align: center;
+    position:fixed;
+    margin-top:150px;
+    height:100%;
+    width:100%;
+}
+.alert{
+    width:100%;
+    text-align:center;
+    font-size:18px;
+}
+
+.imglink1{
+    line-height: 55px;
+    font-size: 16px;
+}
+
+.imglink{
+    margin-left:12.666%;
+    margin-right:4%;
+    width:120px;
+    height:80px;
+    font-size: 16px;
+}
+
+.song{
+    text-align: center;
+    margin-top:30px;
+    font-size: 16px;
+}
+.artist{
+    margin-top:30px;
+    text-align: center;
+    font-size: 16px;
+}
+.total{
+    margin-top:30px;
+    text-align: center;
+    font-size: 16px;
+}
+#footer{
+    display: none;
+}
+@media(min-width:744px) and (max-width:991px){
+    body{
+        margin-top:0px;
+    }
+    .artist{
+        font-size: 17px;
+    }
+    .total{
+        font-size:17px;
+    }
+    .imglink{
+        margin-left:10%;
+        font-size: 17px;
+        margin-right:0px;
+    }
+}
+
+@media(max-width:773px){
+    body{
+        margin-top:0px;
+    }
+    .song{
+        margin-top:0px;
+        font-size:13px;
+    }
+    .artist{
+        display:none;
+        margin-top:0px;
+        font-size: 13px;
+    }
+    .total{
+        margin-top:0px;
+        font-size:13px;
+    }
+    .imglink1{
+        line-height:20px;
+    }
+    .imglink{
+        margin-top:0px;
+        width:80px;
+        height:60px;
+        font-size: 13px;
+        margin-left:5%;
+        margin-right:0px;
+    }
+}

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+{% if user.is_authenticated %}
+<title>{{request.user.username}}'s Playlist</title>
+{% else %}
+<title>The Playlist</title>
+{% endif %}
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/artists.css' %}">
+{% if user.is_authenticated %}
+<div class="usernoob">{{request.user.username}}'s Favourite Artists </div>
+<div class="bod col-lg-12 col-md-12 col-sd-12">
+    <div class="single col-lg-12 col-md-12 col-sd-12">
+        <h2 class="imglink1 imglink col-lg-2 col-md-4 col-sd-2">Thumbnail </h2>
+        <h2 class="artist col-lg-5 col-md-6 col-sd-5">Artist</h2>
+        <h2 class="total col-lg-1 col-md-2 col-sd-1">Count</h2>
+    </div>
+    {% for a,l,t in list1 %}
+    <div class="single col-lg-12 col-md-12 col-sd-12">
+        <a target="_blank" href="https://music.youtube.com/watch?v={{l}}"><img src="http://img.youtube.com/vi/{{l}}/hqdefault.jpg" class="imglink col-lg-2 col-md-4 col-sd-2"></a>
+        <div class="artist col-lg-5 col-md-6 col-sd-5">{{a}}</div>
+        <div class="total col-lg-1 col-md-2 col-sd-1">{{t}}</div>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<div class="warn"><p style="font-size:25px;">Sign In to view Your Favourite Artists</p></div>
+{% endif %}
+{% for message in messages %}
+    <div class="alert">
+        <a class="close">!</a>
+            {{ message }}
+        <a class="close">!</a>
+    </div>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{userprofile}}'s Playlist</title>
+    <meta charset="utf-8">
+    <meta name= "viewport" content="initial-scale=1" width="device-width">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+    <link rel="icon" href="{% static 'images/youtubefavicon.png' %}">
+    <meta property="og:image" content="{% static 'images/youtubemeta.jpg' %}">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="640">
+    <meta property="og:image:height" content="480">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://theplaylist.pythonanywhere.com/">
+    <meta property="og:title" content="The Playlist">
+    <meta property="og:description" content="Get Stats for your Youtube Music and Share with your friends">
+    <meta name="google-site-verification" content="9JGrPWTPs_uLQ4tZgeKOKXK57OVzGR7bHEjTu59s3K8">
+    <meta name="keywords" content=" The,Python,Youtube,Music,Statistics,Playlist,Videos">
+    <meta name="author" content="Rohit D">
+    <meta name="description" content="An interactive website which automatically creates and stores 
+    your youtube playlists. The playlist can be shared to your friends. This website Creates playlists on a month-by-month basis
+    and displays the number of times you listen to songs as count in artists and songs tab.">
+</head>
+<body>
+    <div class="top col-lg-12 col-md-12 col-sd-12">
+        <div class="col-lg-4 col-md-3 col-sd-12">
+            <div class="theplaylist">
+            <button class="butnoob"><a href="{% url 'sharedata' userprofile %}" class="butnooblink">THE PLAYLIST</a></button>
+            </div>
+        </div>
+        <div class="navbut col-lg-1 col-md-2 col-sd-3">
+            <div class="navbuts navbuts1">
+            <a class="navname" href="{% url 'sharedata' userprofile %}">Home</a>
+            </div>
+        </div>
+        <div class="navbut col-lg-1 col-md-2 col-sd-2"> 
+            <div class="navbuts">
+            <a class="navname" href="{% url 'sharesong' userprofile %}">Songs</a>
+            </div>
+        </div>
+        <div class="navbut col-lg-1 col-md-2 col-sd-2">
+            <div class="navbuts">
+            <a class="navname" href="{% url 'shareartist' userprofile %}">Artists</a>
+            </div>
+        </div>
+        <div class="navbut col-lg-1 col-md-2 col-sd-2">
+            <div class="navbuts">
+            <a target="_blank" class="navname" href="{% url 'update' %}">Update</a>
+            </div>
+        </div>
+        <div class="navbut col-lg-4 col-md-1 col-sd-2">
+            <div class="navbuts2">
+                {% if user.is_authenticated %}
+                    <a class="navname" href="{% url 'signout' %}">Logout</a>
+                {% else %}    
+                    <a target="_blank" class="navname" href="{% url 'signin' %}">Sign In</a>
+                {% endif %}    
+            </div>
+        </div>
+    </div>
+    <div class="mainbody">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <div id="footer">Designed by 
+        <a target="_blank" class="linkedinname" href="https://www.linkedin.com/in/rohit-d-898384211/">
+            Designed by Rohit D <img class="linkedin" src="{% static 'images/linkedin.png' %}">
+        </a>
+    </div>
+</body>
+</html>

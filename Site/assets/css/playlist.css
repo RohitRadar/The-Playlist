@@ -1,0 +1,80 @@
+.usernoob{
+    text-align: center;
+    font-size: 25px;
+}
+.bod{
+    width:100%;
+    height:fit-content;
+}
+.single{
+    margin-bottom:20px;
+    font-size: 16px;
+}
+
+.imglink1{
+    line-height: 30px;
+}
+
+.imglink{
+    margin-left:12.666%;
+    margin-right:4%;
+    width:80px;
+    height:60px;
+    font-size: 16px;
+}
+
+.song{
+    text-align: center;
+    margin-top:20px;
+    font-size: 16px;
+}
+.artist{
+    margin-top:20px;
+    text-align: center;
+    font-size: 16px;
+}
+.total{
+    margin-top:20px;
+    text-align: center;
+    font-size: 16px;
+}
+
+@media(min-width:744px) and (max-width:991px){
+    body{
+        margin-top:0px;
+    }
+    .artist{
+        font-size: 15px;
+    }
+    .total{
+        font-size:15px;
+    }
+    .imglink{
+        margin-left:10%;
+        font-size: 15px;
+        margin-right:0px;
+    }
+}
+
+@media(max-width:773px){
+    body{
+        margin-top:0px;
+    }
+    .artist{
+        font-size: 10px;
+    }
+    .total{
+        font-size:10px;
+    }
+    .song{
+        font-size:10px;
+    }
+    .imglink{
+        font-size: 10px;
+        margin-left:40px;
+        margin-right:0px;
+    }
+}
+#footer{
+    display: none;
+}

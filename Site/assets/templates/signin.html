@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+<title>The Playlist</title>
+{% endblock %}
+
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/signin.css' %}">
+<div class="body">
+    <div class="usernoob"> Sign In to Get Started</div>
+    <form class="forms" method="post" class="from-group">
+        {% csrf_token %}
+        {{ form.as_p }}
+        {% for message in messages %}
+        <div class="alert">
+            <a class="close">!</a>
+            {{ message }}
+            <a class="close">!</a>
+        </div>
+        {% endfor %}
+        <button class="signinbutton" type="submit">Login</button>
+    </form>
+    <p class="signup">Don't have an account? Create one
+        <a  href="/signup">here</a>  
+    </p>
+</div>
+{% endblock %}

@@ -1,0 +1,154 @@
+.alert{
+    position:fixed;
+    top:150px;
+    width:100%;
+    text-align:center;
+    font-size:20px;
+}
+.sharecopy{
+    margin-left:1px;
+    border-color: rgb(0, 255, 170);
+    border-width: 2px;
+    font-size: 15px;
+}
+.sharecopy:hover{
+    cursor: pointer;
+    border-color:rgb(0, 255, 55) ;
+}
+#myInput{
+    margin-left:10px;
+    width:fit-content;
+    font-size:15px;
+    border-color:rgb(0, 255, 170);
+}
+.sharep{
+    margin-left:10px;
+    font-size:20px;
+}
+.months{
+    font-size:10px;
+}
+
+.grids{
+    text-align: center;
+    font-size:15px;
+}
+
+.imglink{
+    width:80%;
+    height:80%;
+}
+.year{
+    font-size: 20px;
+}
+
+.homelandimg{
+    width:100%;
+    height:100%;
+}
+
+.metaimg{
+    margin-left:10%;
+    margin-top:10%;
+    width:90%;
+}
+
+.metainfo{
+    font-size:50px;
+    margin-left:5%;
+    margin-top:20%;
+    width:80%;
+}
+.metabutton{
+    background-color:rgb(88, 0, 139);
+    font-size:30px;
+    margin-top:-50px;
+    margin-left:5%;
+    width:200px;
+    height:60px;
+    border-radius:10px;
+}
+.metahow{
+    font-size:45px;
+    margin-left:5%;
+    width:80%;
+}
+.metasub{
+    margin-top:-20px;
+    font-size:15px;
+    margin-left:5%;
+    width:80%;
+    line-height: 1.6;
+}
+.metah{
+    font-size:28px;
+    margin-left:5%;
+    width:80%;
+}
+
+@media(min-width:744px) and (max-width:1050px){
+    body{
+        margin-top:0px;
+    }
+    .metaimg{
+        margin-left:20px;
+        margin-top:15%;
+        width:80%;
+    }
+    .metainfo{
+        font-size:30px;
+        margin-left:0%;
+        margin-top:20%;
+        width:80%;
+    }
+    .metabutton{
+        background-color:rgb(88, 0, 139);
+        font-size:20px;
+        margin-top:-20px;
+        margin-left:0%;
+        width:fit-content;
+        border-radius: 50px;
+    }
+    .metahow{
+        font-size:30px;
+        margin-left:3%;
+        width:80%;
+    }
+}
+
+@media(max-width:773px){
+    body{
+        margin-top:0px;
+    }
+    .metaimg{
+        margin-left:10%;
+        margin-top:15%;
+        width:80%;
+    }
+    .metainfo{
+        font-size:30px;
+        margin-left:10%;
+        margin-top:5%;
+        width:80%;
+    }
+    .metabutton{
+        background-color:rgb(88, 0, 139);
+        font-size:20px;
+        margin-top:-20px;
+        margin-left:10%;
+        margin-bottom:20px;
+        width:fit-content;
+        border-radius: 50px;
+        height:40px;
+    }
+}
+#footer{
+    display: none;
+}
+.warn{
+    text-align: center;
+    position:fixed;
+    top:600px;
+    height:100%;
+    width:100%;
+}

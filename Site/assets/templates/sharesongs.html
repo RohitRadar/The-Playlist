@@ -1,0 +1,29 @@
+{% extends 'sharedbase.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/songs.css' %}">
+{% if user.is_authenticated %}
+{% else %}
+<div class="col-lg-12" style="text-align:right;font-size:15px;padding-bottom:40px;">
+    Sign in to create your own playlist like {{userprofile}}
+</div>
+{% endif %}
+<div class="usernoob">{{userprofile}}'s All Time Listens</div>
+<div class="bod col-lg-12 col-md-12 col-sd-12">
+    <div class="single col-lg-12 col-md-12 col-sd-12">
+        <h2 class="imglink imglink1 col-lg-2 col-md-2 col-sd-2">Thumbnail </h2>
+        <h2 class="song col-lg-3 col-md-4 col-sd-4">Song Name</h2>
+        <h2 class="artist col-lg-3 col-md-3 col-sd-4">Artist</h2>
+        <h2 class="total col-lg-1 col-md-1 col-sd-2">Total</h2>
+    </div>
+    {% for s,a,l,t in list1 %}
+    <div class="single col-lg-12 col-md-12 col-sd-12">
+        <a target="_blank" href="https://music.youtube.com/watch?v={{l}}"><img src="http://img.youtube.com/vi/{{l}}/hqdefault.jpg" class="imglink col-lg-2 col-md-2 col-sd-2"></a>
+        <div class="song col-lg-3 col-md-4 col-sd-4">{{s}}</div>
+        <div class="artist col-lg-3 col-md-3 col-sd-4">{{a}}</div>
+        <div class="total col-lg-1 col-md-1 col-sd-2">{{t}}</div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+{% if user.is_authenticated %}
+<title>{{request.user.username}}'s Playlist</title>
+{% else %}
+<title>The Playlist</title>
+{% endif %}
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/update.css' %}">
+{% if user.is_authenticated %}
+<div class="body1">
+    <p style="font-size:27px">Instructions to Upload File</p>
+    <p>1. Go to <a target="_blank" style="color:aqua" href="https://takeout.google.com"> Google Takeout</a> and Click on Deselect-All</p>
+    <img class="insimage" src="{% static 'images/info1.jpg' %}">
+    <p>2. Choose the Google Account you listen to music in on the top</p>
+    <p>left corner of the webpage </p>
+    <img src="{% static 'images/info2.jpg' %}" class="insimage">
+    <p>3. Scroll Down the page and select Youtube Data</p>
+    <img src="{% static 'images/info7.jpg' %}" class="insimage">
+    <p>4. Include only watch history</p>
+    <img src="{% static 'images/info3.jpg' %}" class="insimage">
+    <p>5. Choose JSON for history data type</p>
+    <img src="{% static 'images/info4.jpg' %}" class="insimage">
+    <p>6. Finally it should look like this. Click Next</p>
+    <img src="{% static 'images/info7.jpg' %}" class="insimage">
+    <p>7. Here, choose export once twice a month if you want the data</p> 
+    <p>to be mailed to your Google Account once every two months</p>
+    <img src="{% static 'images/info6.jpg' %}" class="insimage">
+    <p>8. This Process Can take Minutes. Please wait and download</p>
+    <p>the created export</p>
+    <img src="{% static 'images/info11.jpg' %}" class="insimage">
+    <p>9. Now, upload the .zip file Below.</p> 
+    <img src="{% static 'images/info8.jpg' %}" class="insimage">
+    <p style="font-size:25px"> Follow the instructions and upload the File here to generate your playlist</p>
+    <form method = "post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="submitbutton" type="submit"><a style="color:white">Upload</a></button>
+        {% for message in messages %}
+        <div class="alert">
+            <a class="close">!!</a>
+            {{ message }}
+            <a class="close">!!</a>
+        </div>
+        {% endfor %}
+    </form>
+</div>
+{% else %}
+<p class="warn"><p style="font-size:25px;text-align:center;padding-top: 150px;">Sign In to create playlist</p></p>
+{% endif %}
+{% endblock %}

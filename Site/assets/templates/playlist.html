@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/songs.css' %}">
+<div class="usernoob">{{request.user.username}} in {{month}} {{year}}</h1>
+    <div class="bod col-lg-12 col-md-12 col-sd-12">
+        <div class="single col-lg-12 col-md-12 col-sd-12">
+            <h2 class="imglink imglink1 col-lg-2 col-md-2 col-sd-2">Thumbnail </h2>
+            <h2 class="song col-lg-3 col-md-4 col-sd-6">Song </h2>
+            <h2 class="artist col-lg-3 col-md-3 col-sd-0">Artist</h2>
+            <h2 class="total col-lg-1 col-md-1 col-sd-1">Total</h2>
+        </div>
+        {% for s,a,l,t in list1 %}
+        <div class="single col-lg-12 col-md-12 col-sd-12">
+            <a target="_blank" href="https://music.youtube.com/watch?v={{l}}"><img src="http://img.youtube.com/vi/{{l}}/hqdefault.jpg" class="imglink col-lg-2 col-md-2 col-sd-2"></a>
+            <div class="song col-lg-3 col-md-4 col-sd-6">{{s}}</div>
+            <div class="artist col-lg-3 col-md-3 col-sd-0">{{a}}</div>
+            <div class="total col-lg-1 col-md-1 col-sd-1">{{t}}</div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

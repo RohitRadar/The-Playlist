@@ -1,0 +1,47 @@
+body{
+    margin-top:-25px;
+}
+.body1{
+    width:100%;
+    text-align:center;
+}
+h1{
+    font-size:20px;
+}
+h2{
+    font-size:18px;
+}
+p{
+    font-size:18px;
+}
+.submitbutton{
+    font-size:25px;
+    background-color: greenyellow;
+    margin-bottom:50px;
+}
+.submitbutton:hover{
+    cursor: pointer;
+    background-color:green;
+}
+.alert{
+    font-size:1.75vw;
+}
+.insimage{
+    border: 2px solid;
+    border-color: rgb(32, 199, 255);
+    margin-bottom:30px;
+    max-width:400px;
+}
+@media(min-width:744px) and (max-width:991px){
+}
+
+@media(max-width:773px){
+}
+.warn{
+    text-align: center;
+    position:fixed;
+    margin-top:150px;
+    height:100%;
+    width:100%;
+}
+

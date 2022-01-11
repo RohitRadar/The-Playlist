@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+{% if user.is_authenticated %}
+<title>{{request.user.username}}'s Playlist</title>
+{% else %}
+<title>The Playlist</title>
+{% endif %}
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+{% if user.is_authenticated %}
+{% if prof != 99 %}
+<div class="col-lg-12 col-md-12 col-sd-12">
+    <p class="sharep"> Copy Link To Share Your Playlist with others:</p>
+    <input type="text" readonly="readonly" value="https://theplaylist.pythonanywhere.com/{{request.user.username}}" id="myInput">
+    <button class="sharecopy" onclick="myFunction()">Copy text</button>
+</div>
+{% endif %}
+{% for year,yearcontent in list1 %}
+<div class="grids col-lg-12 col-md-12 col-sd-12">
+    <h1 class="year">{{request.user.username}} in {{year}}</h1>
+    {% for month,link in yearcontent %}
+        <div class="months col-lg-4 col-md-4 col-sd-6">
+            <h2>{{month}}</h2>
+            <a href="{% url 'playlist' year month %}"><img class="imglink" src="http://img.youtube.com/vi/{{link}}/hqdefault.jpg"></a>
+        </div>    
+    {% endfor %}
+</div>
+{% endfor %}
+<script>
+    function myFunction() {
+        var copyText = document.getElementById("myInput");
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); /* For mobile devices */
+        document.execCommand("copy");
+        alert("Copied the text: " + copyText.value);
+    }
+</script>
+{% else %}
+<div class="infoall">
+    <div class="col-lg-6 col-md-6 col-sd-12">
+        <img class="metaimg" src="{% static 'images/youtubemeta.jpg' %}" >   
+    </div>
+    <div class="col-lg-6 col-md-6 col-sd-12">
+        <p class="metainfo">Create Monthly Playlists and Discover your taste in Music in numbers</p>
+        <button class="metabutton"><a style="text-decoration:none;color:white;height:50px;" href="{% url 'signin' %}">Get Started</a></button>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sd-12">
+        <p class="metahow"> How it Works </p>
+        <p class="metah">Introduction</p>
+        <p class="metasub">Wanted to create a playlist and find stats for your YouTube and YouTube Music Account? This website is made just for you. The Playlist is an interactive website which automatically creates and stores 
+            your youtube playlists, which can be shared with friends.</p>
+        <p class="metah">Home</p>
+        <p class="metasub">Creates playlists on a month-by-month basis</p>
+        <p class="metasub">The Monthly Playlist contains the list of songs and the number of times listened to it in the given month</p>
+        <p class="metah">Songs</p>
+        <p class="metasub">View Number of times you listened to your favouorite songs</p>
+        <p class="metah">Artists</p>
+        <p class="metasub">Same as Songs tab, but for your favourite artists</p>
+        <p class="metah">Update</p>
+        <p class="metasub">This is the heart of the website. To create the playlist, your Youtube and Youtube
+            Music Watch-History is needed. Follow the Instructions in the update tab upload your 
+            google data here so that the playlists can be created. You can Update your playlist how many ever 
+            times you want and as you please.</p>
+    </div>
+</div>
+{% endif %}
+{% for message in messages %}
+    <div class="alert">
+        <a class="close">!</a>
+            {{ message }}
+        <a class="close">!</a>
+    </div>
+{% endfor %}
+{% endblock %}

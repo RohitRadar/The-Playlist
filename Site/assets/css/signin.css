@@ -1,0 +1,71 @@
+.body{
+    margin-top:0px;
+    width:100%;
+    height:50%;
+    text-align:center;
+}
+
+.usernoob{
+    text-align: center;
+    font-size: 25px;
+}
+
+ul{
+    display:none; 
+ }
+
+.signup{
+    font-size:15px;
+}
+label{
+     font-size:15px;
+ }
+ 
+ input{
+     width:20%;
+     height:30px;
+     margin:auto;
+     border-color:indigo;
+     margin-bottom:20px;
+     font-size: 13px;
+ }
+ 
+ .signinbutton{
+     font-size:20px;
+     margin-top:10px;
+     width:auto;
+     height:45px;
+     background-color: rgb(0, 172, 106);
+ }
+ 
+ .signinbutton:hover{
+     background-color:#00ff22;
+     cursor:pointer;
+ }
+ .signinbutton:focus{
+     background-color:#00ff22;
+ }
+
+ p{
+     font-size:15px;
+ }
+
+ .alert{
+     font-size:20px;
+ }
+
+ @media(min-width:744px) and (max-width:991px){
+    body{
+        margin-top:0px;
+    }
+}
+
+@media(max-width:773px){
+    body{
+        margin-top:0px;
+    }
+    input{
+        width:250px;
+    }
+
+}
